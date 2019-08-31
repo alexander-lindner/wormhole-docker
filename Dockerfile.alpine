@@ -5,7 +5,7 @@ WORKDIR /data
 
 RUN apk add --virtual  .build-deps gcc freetype-dev musl-dev  libffi-dev openssl-dev make && pip install magic-wormhole && apk del .build-deps gcc freetype-dev musl-dev  libffi-dev openssl-dev make
 
-CMD ["wormhole"]
+ENTRYPOINT ["wormhole"]
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
