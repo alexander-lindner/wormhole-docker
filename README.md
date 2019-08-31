@@ -12,6 +12,9 @@ docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:alpine wor
 -	[`alpine`](https://github.com/alexander-lindner/wormhole-docker/blob/master/Dockerfile.alpine)
 
 ## install
+
+[![asciicast](https://asciinema.org/a/XmgVPkFk48ZSbtCcmU84GlfoY.svg)](https://asciinema.org/a/XmgVPkFk48ZSbtCcmU84GlfoY)
+
 Run the follwing command
 
 ```bash
