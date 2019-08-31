@@ -4,7 +4,7 @@ Docker images for wormhole
 ## use
 Use it like the normal wormhole cli:
 ```bash
-docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless wormhole send --text "hi there"
+docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless send --text "hi there"
 ```
 ## tags
 
@@ -19,6 +19,6 @@ docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless
 Run the follwing command
 
 ```bash
-echo 'alias wormhole="docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless wormhole"' >> .bashrc
+echo 'alias wormhole="docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless"' >> .bashrc
 ```
 restart your shell or open a new one and start using `wormhole`
