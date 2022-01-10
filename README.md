@@ -1,24 +1,23 @@
 # wormhole-docker
-Docker images for wormhole
+Small Docker image for wormhole (so you don't need the nasty python dependency)
 
 ## use
 Use it like the normal wormhole cli:
 ```bash
-docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless send --text "hi there"
+docker run --rm -ti  --volume $(pwd):/data ghcr.io/alexander-lindner/wormhole-docker:v1.0.0 send --text "hi there"
 ```
-## tags
-
--	[`latest`](https://github.com/alexander-lindner/wormhole-docker/blob/master/Dockerfile.ubuntu)
--	[`alpine`](https://github.com/alexander-lindner/wormhole-docker/blob/master/Dockerfile.alpine)
--	[`distroless`](https://github.com/alexander-lindner/wormhole-docker/blob/master/Dockerfile.distroless)
 
 ## install
 
 [![asciicast](https://asciinema.org/a/XmgVPkFk48ZSbtCcmU84GlfoY.svg)](https://asciinema.org/a/XmgVPkFk48ZSbtCcmU84GlfoY)
 
-Run the follwing command
-
+Run the following command
+### zsh
 ```bash
-echo 'alias wormhole="docker run --rm -ti  --volume $(pwd):/data  alexanderlindner/wormhole:distroless"' >> .bashrc
+echo 'alias wormhole="docker run --rm -ti  --volume $(pwd):/$(basename $(pwd)) -w /$(basename $(pwd)) -u $(id -u ${USER}):$(id -g ${USER})  ghcr.io/alexander-lindner/wormhole-docker:v1.0.0"' >> .zshrc && . .zshrc
 ```
-restart your shell or open a new one and start using `wormhole`
+
+### bash
+```bash
+echo 'alias wormhole="docker run --rm -ti  --volume $(pwd):/$(basename $(pwd)) -w /$(basename $(pwd)) -u $(id -u ${USER}):$(id -g ${USER})  ghcr.io/alexander-lindner/wormhole-docker:v1.0.0"' >> .bashrc && . .bashrc
+```
