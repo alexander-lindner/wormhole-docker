@@ -3,7 +3,7 @@ FROM ubuntu:latest
 MAINTAINER Alexander Lindner <25225552+alexander-lindner@users.noreply.github.com>
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install python-pip build-essential python-dev libffi-dev libssl-dev -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install python3-pip build-essential python-dev libffi-dev libssl-dev -y && rm -rf /var/lib/apt/lists/*
 RUN pip install magic-wormhole
 
 ENTRYPOINT ["wormhole"]
